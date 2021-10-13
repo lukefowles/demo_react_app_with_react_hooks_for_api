@@ -1,7 +1,5 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-// We  destructure a users variable from
-// the users to object.
 import Card from './Card';
 
 function Cardlist() {
