@@ -1,19 +1,24 @@
 import React from 'react';
-import { userData } from '../users';
+import {useState, useEffect} from 'react';
 // We  destructure a users variable from
 // the users to object.
 import Card from './Card';
 
 function Cardlist() {
+  const [users, setUsers] = useState([]);
+
+useEffect(() => {
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      setUsers(data);
+    });
+}, []);
   //Populate card component dynamically from users.js
-  const cardLists = users.map(function (element, index) {
-    return (
-      <Card
-        id={users[index].id}
-        name={users[index].name}
-        email={users[index].email}
-      />
-    );
+  const cardLists = users.map(function (element) {
+    return <Card id={element.id} name={element.name} email={element.email} />;
   });
 
   return <div>{cardLists};</div>;

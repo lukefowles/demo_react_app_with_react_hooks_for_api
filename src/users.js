@@ -1,16 +1,15 @@
-function fetchData() {
+import { useState, useEffect } from 'react';
+
+const [users, setUsers] = useState([]);
+
+useEffect(() => {
   fetch('https://jsonplaceholder.typicode.com/users')
     .then(function (response) {
       return response.json();
     })
-    .then(function (response) {
-      users = response;
-      return users;
+    .then(function (data) {
+      setUsers(data);
     });
-}
+}, []);
 
-fetchData();
-
-const userData = users;
-
-export default userData;
+export default users;
