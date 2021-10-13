@@ -6,7 +6,7 @@ import Card from './Card';
 
 function Cardlist() {
   //Populate card component dynamically from users.js
-  const aCardComponent = users.map(function (element, index) {
+  const cardLists = users.map(function (element, index) {
     return (
       <Card
         id={users[index].id}
@@ -16,7 +16,7 @@ function Cardlist() {
     );
   });
 
-  return <div>{aCardComponent};</div>;
+  return <div>{cardLists};</div>;
 }
 
 export default Cardlist;
