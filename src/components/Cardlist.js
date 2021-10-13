@@ -1,5 +1,5 @@
 import React from 'react';
-import { users } from '../users';
+import { userData } from '../users';
 // We  destructure a users variable from
 // the users to object.
 import Card from './Card';
