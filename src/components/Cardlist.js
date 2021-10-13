@@ -16,7 +16,11 @@ function Cardlist() {
   }, []);
   //Populate card component dynamically from users.js
   const cardLists = users.map(function (element) {
-    return <Card id={element.id} name={element.name} email={element.email} />;
+    return <Card
+              key={element.id} 
+              id={element.id} 
+              name={element.name} 
+              email={element.email} />;
   });
 
   return <div>{cardLists};</div>;
@@ -26,3 +30,6 @@ export default Cardlist;
 //<Card id={users[0].id} name={users[0].name} email={users[0].email} />
 //<Card id={users[0].id} name={users[1].name} email={users[1].email} />
 //<Card id={users[0].id} name={users[2].name} email={users[2].email} />
+
+//Alternate code without hooks
+
